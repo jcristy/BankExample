@@ -3,12 +3,13 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "Account.h"
 
 using namespace std;
 
 
 
-typedef double LinkedStorage;
+typedef Account LinkedStorage;
 
 
 

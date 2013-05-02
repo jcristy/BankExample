@@ -26,15 +26,18 @@ class List
 
 private:
 	Node* m_head;
+	int m_size;
 	
 	Node* LastNode();
-
+	
 public:
 	List();
 	
 	LinkedStorage getIndex(int index);
 	
 	bool addElement(LinkedStorage elem);
+	
+	int size();
 	
 	void print();
 
@@ -45,6 +48,7 @@ List::List()
 	cout << "List()" << endl;
 	
 	m_head = NULL;
+	m_size = 0;
 }
 
 LinkedStorage List::getIndex(int index)
@@ -103,6 +107,12 @@ bool List::addElement(LinkedStorage elem)
 	else
 		m_head = temp;
 	
+	m_size++;
 	return true;
+}
+
+int List::size()
+{
+	return m_size;
 }
 

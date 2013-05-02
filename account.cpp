@@ -1,5 +1,9 @@
 #include "Account.h"
 
+//
+long Account::account_number_count=10000;//The first created account should be # 10000
+double Account::interestRate = .05;//The interest rate is 5% at the bank of imaginary dollars
+
 Account::Account(double initial_balance, Person owner)
 {
 	balance = initial_balance;

@@ -47,4 +47,4 @@ class Account
 			///<summary>The interest rate for all accounts</summary>
 			///<returns>The interest rate for all accounts</returns>
 			static double getInterestRate();
-};s
+};

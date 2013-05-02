@@ -18,15 +18,33 @@ class Account
 			///<param name="balance"> Opening balance</param>
 			///<param name="owner"> The owner of the account</param>
 			Account(double initial_balance, Person owner);
-			
+
 			///<summary>Attempts to withdrawal</summary>
 			///<param name="amount">The amount to withdrawal</param>
 			///<returns>if the user has the specified funds and the withdrawal was a success</returns>
 			bool withdrawal(double amount);
+
+			///<summary>Makes a deposit</summary>
+			///<param name="amount">The amount to deposit</param>
 			void deposit(double amount);
+
+			///<summary>Gets the balance</summary>
+			
+			///<returns>The balance</returns>
 			double getBalance();
+
+			///<summary>adds interest to the account</summary>
 			void applyInterest();
+			
+			///<summary></summary>
+			///<returns>The account number</returns>
 			long getAccountNumber();
-			static void changeInterestRate();
+
+			///<summary>change the interest rate for all accounts</summary>
+			///<param name="newInterestRate">The new interest rate</param>
+			static void changeInterestRate(double newInterestRate);
+			
+			///<summary>The interest rate for all accounts</summary>
+			///<returns>The interest rate for all accounts</returns>
 			static double getInterestRate();
-}
+};s

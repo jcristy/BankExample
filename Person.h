@@ -1,5 +1,7 @@
 #include <string>
 
+using std::string;
+
 class Person{
 	public:
 		string name;
@@ -10,4 +12,4 @@ class Person{
 		void setName(string name);
 		void setPhone(string phone);
 		
-	}
+	};

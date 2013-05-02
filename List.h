@@ -51,6 +51,7 @@ List::List()
 	m_size = 0;
 }
 
+// throws exception if index is invalid
 LinkedStorage List::getIndex(int index)
 {
 	if ( index < 0 )

@@ -9,7 +9,7 @@ using namespace std;
 
 
 
-typedef double LinkedStorage;
+typedef Account LinkedStorage;
 
 
 

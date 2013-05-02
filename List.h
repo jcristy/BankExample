@@ -9,7 +9,7 @@ using namespace std;
 
 
 
-typedef Account LinkedStorage;
+typedef double LinkedStorage;
 
 
 
@@ -23,7 +23,8 @@ struct Node
 
 class List
 {
-public:
+
+private:
 	Node* m_head;
 	
 	Node* LastNode();
@@ -35,9 +36,7 @@ public:
 	
 	bool addElement(LinkedStorage elem);
 	
-	
 	void print();
-	
 
 };
 
@@ -45,9 +44,28 @@ List::List()
 {
 	cout << "List()" << endl;
 	
-	
 	m_head = NULL;
+}
+
+LinkedStorage List::getIndex(int index)
+{
+	if ( index < 0 )
+		throw "Invalid Index";
+
+	Node* trace = m_head;
+		
+	int i = 0;
+	for (i ; i < index && trace && trace->next ; i++)
+	{
+		trace = trace->next;
+	}
 	
+	//cout << "i: " <<  i << endl;
+	
+	if ( i < index )
+		throw "Invalid Index";
+	
+	return trace->data;
 }
 
 
@@ -58,10 +76,12 @@ Node* List::LastNode()
 	while (trace && trace->next)
 		trace = trace->next;
 	
+	/*
 	if ( trace && trace->data )
 		cout << trace->data << endl;
 	else
 		cout << "NULL" << endl;
+	//*/
 		
 	return trace;
 }
@@ -71,7 +91,6 @@ bool List::addElement(LinkedStorage elem)
 {
 	cout << "addElement " << elem << endl;
 	
-	
 	Node* temp = new Node();
 	
 	temp->next = NULL;
@@ -79,15 +98,11 @@ bool List::addElement(LinkedStorage elem)
 	
 	Node* last = LastNode();
 	
-//	if ( last )
-//		last->next = temp;
-//	else
+	if ( last )
+		last->next = temp;
+	else
+		m_head = temp;
 	
-	m_head->next = temp;
-	
-	
-
-
 	return true;
 }
 

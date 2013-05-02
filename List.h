@@ -39,13 +39,13 @@ public:
 	
 	int size();
 	
-	void print();
+	//void print();
 
 };
 
 List::List()
 {
-	cout << "List()" << endl;
+	//cout << "List()" << endl;
 	
 	m_head = NULL;
 	m_size = 0;
@@ -94,7 +94,7 @@ Node* List::LastNode()
 
 bool List::addElement(LinkedStorage elem)
 {
-	cout << "addElement " << elem << endl;
+	//cout << "addElement " << elem << endl;
 	
 	Node* temp = new Node();
 	

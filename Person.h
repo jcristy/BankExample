@@ -1,4 +1,6 @@
 #include <string>
+#include <ostream>
+#include <iomanip>
 
 using std::string;
 
@@ -30,4 +32,5 @@ class Person{
 		///<params name="phone">the new phone number</params>
 		void setPhone(string phone);
 		
+		friend std::ostream & operator<<(std::ostream &os, Person& per);
 	};

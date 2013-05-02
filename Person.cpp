@@ -28,4 +28,9 @@ void Person::setPhone(string phone)
 {
 	phone_number = phone;
 }
-		
+
+std::ostream & operator<<(std::ostream &os, Person& per)
+{
+	os<<std::setw(10) << std::left << per.getName().substr(0,10)<< " "<<per.getPhone();
+	return os;
+}

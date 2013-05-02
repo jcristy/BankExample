@@ -1,4 +1,6 @@
 #include "Person.h"
+#include <ostream>
+#include <iomanip>
 
 class Account
 {
@@ -30,6 +32,9 @@ class Account
 
 			///<summary>Gets the balance</summary>
 			
+			///<returns>The Owner</returns>
+			Person getOwner();
+
 			///<returns>The balance</returns>
 			double getBalance();
 
@@ -47,4 +52,6 @@ class Account
 			///<summary>The interest rate for all accounts</summary>
 			///<returns>The interest rate for all accounts</returns>
 			static double getInterestRate();
+
+			friend std::ostream & operator<<(std::ostream &os, Account& act);
 };

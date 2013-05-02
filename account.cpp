@@ -13,7 +13,7 @@ Account::Account(double initial_balance, Person owner)
 
 void Account::applyInterest()
 {
-	//TODO
+	balance = balance + interestRate*balance;
 }
 
 void Account::changeInterestRate(double newRate)
@@ -50,4 +50,15 @@ double Account::getBalance()
 double Account::getInterestRate()
 {
 	return interestRate;
+}
+
+Person Account::getOwner()
+{
+	return owner;
+}
+
+std::ostream & operator<<(std::ostream &os, Account& act)
+{
+	os<<act.getAccountNumber()<<" $"<<std::setw(10)<<std::fixed<<std::setprecision(2)<<(((int)(act.getBalance()*100))/100.0)<<" "<< act.getOwner();
+	return os;
 }
